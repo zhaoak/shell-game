@@ -1,0 +1,27 @@
+main {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.shellImg {
+    width: 320px;
+    height: 226px;
+}
+
+#shellContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-color: transparent;
+}
