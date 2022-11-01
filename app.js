@@ -66,16 +66,20 @@ tryAgainButton.addEventListener('click', () => {
 // updates game screen once user has clicked a shell: moves shell, displays pearl, highlights selected shell, changes header, disables shell buttons
 // shellSelected should be reference to selected shell itself, but pearlLocation can just be an int
 function displayResults(pearlLocation, shellSelected, gameOutcome) {
-    shellOneButton.disabled = true;
-    shellTwoButton.disabled = true;
-    shellThreeButton.disabled = true;
+    for (let i = 0; i < shell_list.length; i++) {
+        shell_list[i].disabled = true;
+        shell_list[i].classList.remove('shellButtonSelectScreen');
+        shell_list[i].classList.add('shellButtonResultScreen');
+    }
+
     tryAgainButton.disabled = false;
 
     if (gameOutcome === 'lose') {
-        shellSelected.style.border = 'thick dashed red';
+        shellSelected.classList.remove('shellButtonResultScreen');
+        shellSelected.classList.add('shellButtonResultScreenSelectedLocation');
         userPrompt.textContent = 'Too bad!';
     } else {
-        shellSelected.style.border = 'thick dashed transparent';
+        // we don't display red "wrong guess" border when user guesses correctly
         userPrompt.textContent = 'You found the pearl!';
     }
 
@@ -87,12 +91,13 @@ function displayResults(pearlLocation, shellSelected, gameOutcome) {
 function resetGame(pearlLocation) {
     shellContainer.children[pearlLocation - 1].firstElementChild.style.display = 'none';
     userPrompt.textContent = 'Where could it be now?';
-    shellOneButton.style.border = 'thick dotted transparent';
-    shellTwoButton.style.border = 'thick dotted transparent';
-    shellThreeButton.style.border = 'thick dotted transparent';
-    shellOneButton.disabled = false;
-    shellTwoButton.disabled = false;
-    shellThreeButton.disabled = false;
+    for (let i = 0; i < shell_list.length; i++) {
+        shell_list[i].classList.remove('shellButtonResultScreen');
+        shell_list[i].classList.remove('shellButtonResultScreenSelectedLocation');
+        shell_list[i].classList.add('shellButtonSelectScreen');
+        shell_list[i].disabled = false;
+    }
+
     tryAgainButton.disabled = true;
 }
 
@@ -111,4 +116,12 @@ function updateStats(gameOutcome) {
 // sets random pearl location, returns a number between 1 and shellCount
 function setRandomPearlLocation(shellCount) {
     return Math.ceil(Math.random() * shellCount);
+}
+
+// resets stats to zero, also resets game to initial state
+function resetStats() {
+    wins = 0;
+    losses = 0;
+    winCounter.textContent = wins;
+    loseCounter.textContent = losses;
 }

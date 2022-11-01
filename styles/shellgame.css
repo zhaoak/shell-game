@@ -2,15 +2,23 @@ main {
     text-align: center;
 }
 
-.shellButton {
+.shellButtonSelectScreen {
     background-color: transparent;
     border: thick dotted transparent;
     outline: none;
     cursor: pointer;
 }
 
-.shellButton:hover {
+.shellButtonSelectScreen:hover {
     border: thick dotted lightblue;
+}
+
+.shellButtonResultScreen {
+    border: thick dotted transparent;
+}
+
+.shellButtonResultScreenSelectedLocation {
+    border: thick dashed red;
 }
 
 .shellImg {
