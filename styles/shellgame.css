@@ -2,11 +2,7 @@ main {
     text-align: center;
 }
 
-header {
-    text-align: center;
-}
-
-button {
+.shellButton {
     background-color: transparent;
     border: none;
     outline: none;
@@ -16,12 +12,25 @@ button {
 .shellImg {
     width: 320px;
     height: 226px;
+    z-index: 0;
 }
 
 #shellContainer {
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom: 50px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 150px;
     margin-top: 50px;
     background-color: transparent;
+}
+
+#pearlImg {
+    display: none;
+    position: absolute;
+}
+
+.pearlLocation {
+    transform: translateY(113px);
 }

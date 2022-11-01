@@ -16,6 +16,7 @@ In-browser guessing game: pick the shell with the pearl hidden in it to win!
 
 ## Functions
 
--   `displayResults(shellLocation)`: shows pearl and transforms shell in appropriate location, changes header with win/lose message
--   `resetGame()`: reset shell transform, hide pearl
+-   `displayResults(shellLocation, outcome)`: shows pearl and transforms shell in appropriate location, changes header with win/lose message
+-   `resetGame()`: reset shell transform, hide pearl, reset game visuals
 -   `updateStats(gameOutcome)`: update internally tracked stats, update stat display on page
+-   `setRandomPearlLocation(shellCount)`: returns random location for pearl

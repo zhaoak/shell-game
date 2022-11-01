@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Web App</title>
+        <title>Shell Game</title>
         <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
         <!-- js -->
@@ -32,10 +32,13 @@
             <h2 id="userPrompt">Find the pearl! (Click a shell!)</h2>
 
 	    <div id="shellContainer">
-		    <button type="button" id="shellOneButton"><img class="shellImg" src="assets/shell.png" alt="Shell number one."></button>
-		    <button type="button" id="shellTwoButton"><img class="shellImg" src="assets/shell.png" alt="Shell number two."></button>
-		    <button type="button" id="shellThreeButton"><img class="shellImg" src="assets/shell.png" alt="Shell number three."></button>
+		    <button type="button" id="shellOneButton" class="shellButton"><img class="shellImg" src="assets/shell.png" alt="Shell number one."></button>
+		    <button type="button" id="shellTwoButton" class="shellButton"><img class="shellImg" src="assets/shell.png" alt="Shell number two."></button>
+		    <button type="button" id="shellThreeButton" class="shellButton"><img class="shellImg" src="assets/shell.png" alt="Shell number three."></button>
+		    <img id="pearlImg" src="assets/pearl.png" alt="The Pearl!"/>
 	    </div>
+
+	    <hr />
 
 	    <section id="statsList">
 		<div>Won: <span id="winCounter">0</span></div>
