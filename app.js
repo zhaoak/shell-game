@@ -8,6 +8,7 @@ const shellThreeButton = document.getElementById('shellThreeButton');
 const winCounter = document.getElementById('winCounter');
 const loseCounter = document.getElementById('loseCounter');
 const gameCounter = document.getElementById('gameCounter');
+const tryAgainButton = document.getElementById('tryAgainButton');
 
 /* State */
 let wins = 0;
@@ -37,6 +38,7 @@ function displayResults(pearlLocation, gameOutcome) {
     shellOneButton.disabled = true;
     shellTwoButton.disabled = true;
     shellThreeButton.disabled = true;
+    tryAgainButton.classList.toggle('hidden');
 }
 
 // returns to initial game screen: resets shells, changes header, clears selected shell border indicator
