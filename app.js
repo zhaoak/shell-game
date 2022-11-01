@@ -10,12 +10,14 @@ const winCounter = document.getElementById('winCounter');
 const loseCounter = document.getElementById('loseCounter');
 const gameCounter = document.getElementById('gameCounter');
 const tryAgainButton = document.getElementById('tryAgainButton');
+const resetStatsButton = document.getElementById('resetStatsButton');
 
 /* State */
 let wins = 0;
 let losses = 0;
 let pearlLocation = 0;
 tryAgainButton.disabled = true;
+let statResetConfirmation = false;
 let shell_list = [shellOneButton, shellTwoButton, shellThreeButton];
 
 /* Events */
@@ -57,6 +59,10 @@ shellThreeButton.addEventListener('click', () => {
 
 tryAgainButton.addEventListener('click', () => {
     resetGame(pearlLocation);
+});
+
+resetStatsButton.addEventListener('click', () => {
+    if (confirm('Reset all stats to zero?')) resetStats();
 });
 
 /* Display Functions */
@@ -124,4 +130,5 @@ function resetStats() {
     losses = 0;
     winCounter.textContent = wins;
     loseCounter.textContent = losses;
+    gameCounter.textContent = 0;
 }

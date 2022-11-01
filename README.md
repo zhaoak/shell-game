@@ -20,3 +20,4 @@ In-browser guessing game: pick the shell with the pearl hidden in it to win!
 -   `resetGame(pearlLocation)`: reset shell transform, hide pearl, reset game visuals
 -   `updateStats(gameOutcome)`: update internally tracked stats, update stat display on page
 -   `setRandomPearlLocation(shellCount)`: returns random location for pearl
+-   `resetStats()`: resets all tracked stats (win/loss/total) to zero; does not reset game

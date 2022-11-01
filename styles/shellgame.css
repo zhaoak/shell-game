@@ -2,6 +2,11 @@ main {
     text-align: center;
 }
 
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .shellButtonSelectScreen {
     background-color: transparent;
     border: thick dotted transparent;
@@ -55,4 +60,8 @@ main {
 
 .hidden {
     display: none;
+}
+
+#resetStatsButton {
+    margin-top: 50px;
 }
