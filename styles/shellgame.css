@@ -9,10 +9,21 @@ main {
     cursor: pointer;
 }
 
+.shellButton:hover {
+    border: thick dotted lightblue;
+}
+
 .shellImg {
     width: 320px;
     height: 226px;
     z-index: 0;
+}
+
+.shellSubContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #shellContainer {
@@ -21,14 +32,13 @@ main {
     align-items: center;
     align-content: center;
     justify-content: center;
-    margin-bottom: 150px;
-    margin-top: 50px;
-    background-color: transparent;
+    height: 60%;
 }
 
-#pearlImg {
+.pearlImg {
     display: none;
-    position: absolute;
+    width: 200px;
+    height: 200px;
 }
 
 .pearlLocation {
