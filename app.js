@@ -14,12 +14,13 @@ const tryAgainButton = document.getElementById('tryAgainButton');
 /* State */
 let wins = 0;
 let losses = 0;
+let pearlLocation = 0;
 tryAgainButton.disabled = true;
 let shell_list = [shellOneButton, shellTwoButton, shellThreeButton];
 
 /* Events */
 shellOneButton.addEventListener('click', () => {
-    const pearlLocation = setRandomPearlLocation(3);
+    pearlLocation = setRandomPearlLocation(3);
     let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
     if (pearlLocation === 1) {
         gameOutcome = 'win';
@@ -31,7 +32,7 @@ shellOneButton.addEventListener('click', () => {
 });
 
 shellTwoButton.addEventListener('click', () => {
-    const pearlLocation = setRandomPearlLocation(3);
+    pearlLocation = setRandomPearlLocation(3);
     let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
     if (pearlLocation === 2) {
         gameOutcome = 'win';
@@ -43,7 +44,7 @@ shellTwoButton.addEventListener('click', () => {
 });
 
 shellThreeButton.addEventListener('click', () => {
-    const pearlLocation = setRandomPearlLocation(3);
+    pearlLocation = setRandomPearlLocation(3);
     let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
     if (pearlLocation === 3) {
         gameOutcome = 'win';
@@ -52,6 +53,10 @@ shellThreeButton.addEventListener('click', () => {
     }
     updateStats(gameOutcome);
     displayResults(pearlLocation, shellThreeButton, gameOutcome);
+});
+
+tryAgainButton.addEventListener('click', () => {
+    resetGame(pearlLocation);
 });
 
 /* Display Functions */
@@ -79,7 +84,17 @@ function displayResults(pearlLocation, shellSelected, gameOutcome) {
 }
 
 // returns to initial game screen: resets shells, changes header, clears selected shell border indicator. pearlLocation should be int
-function resetGame(pearlLocation) {}
+function resetGame(pearlLocation) {
+    shellContainer.children[pearlLocation - 1].firstElementChild.style.display = 'none';
+    userPrompt.textContent = 'Where could it be now?';
+    shellOneButton.style.border = 'thick dotted transparent';
+    shellTwoButton.style.border = 'thick dotted transparent';
+    shellThreeButton.style.border = 'thick dotted transparent';
+    shellOneButton.disabled = false;
+    shellTwoButton.disabled = false;
+    shellThreeButton.disabled = false;
+    tryAgainButton.disabled = true;
+}
 
 // update internal tracked stats as well as on-page ones
 function updateStats(gameOutcome) {
