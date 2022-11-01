@@ -20,7 +20,6 @@ let shell_list = [shellOneButton, shellTwoButton, shellThreeButton];
 /* Events */
 shellOneButton.addEventListener('click', () => {
     const pearlLocation = setRandomPearlLocation(3);
-    console.log(pearlLocation);
     let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
     if (pearlLocation === 1) {
         gameOutcome = 'win';
@@ -29,6 +28,30 @@ shellOneButton.addEventListener('click', () => {
     }
     updateStats(gameOutcome);
     displayResults(pearlLocation, shellOneButton, gameOutcome);
+});
+
+shellTwoButton.addEventListener('click', () => {
+    const pearlLocation = setRandomPearlLocation(3);
+    let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
+    if (pearlLocation === 2) {
+        gameOutcome = 'win';
+    } else {
+        gameOutcome = 'lose';
+    }
+    updateStats(gameOutcome);
+    displayResults(pearlLocation, shellTwoButton, gameOutcome);
+});
+
+shellThreeButton.addEventListener('click', () => {
+    const pearlLocation = setRandomPearlLocation(3);
+    let gameOutcome = 'lose'; // gameOutcome must be defined in this scope
+    if (pearlLocation === 3) {
+        gameOutcome = 'win';
+    } else {
+        gameOutcome = 'lose';
+    }
+    updateStats(gameOutcome);
+    displayResults(pearlLocation, shellThreeButton, gameOutcome);
 });
 
 /* Display Functions */
