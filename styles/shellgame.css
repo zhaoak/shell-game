@@ -1,0 +1,67 @@
+main {
+    text-align: center;
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.shellButtonSelectScreen {
+    background-color: transparent;
+    border: thick dotted transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.shellButtonSelectScreen:hover {
+    border: thick dotted lightblue;
+}
+
+.shellButtonResultScreen {
+    border: thick dotted transparent;
+}
+
+.shellButtonResultScreenSelectedLocation {
+    border: thick dashed red;
+}
+
+.shellImg {
+    width: 320px;
+    height: 226px;
+    z-index: 0;
+}
+
+.shellSubContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#shellContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 60%;
+}
+
+.pearlImg {
+    display: none;
+    width: 200px;
+    height: 200px;
+}
+
+.pearlLocation {
+    transform: translateY(113px);
+}
+
+.hidden {
+    display: none;
+}
+
+#resetStatsButton {
+    margin-top: 50px;
+}

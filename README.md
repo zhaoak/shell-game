@@ -1,27 +1,27 @@
-## The Golden Rule:
+# Shell Game
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+In-browser guessing game: pick the shell with the pearl hidden in it to win!
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+![wireframe diagram for shell game](shellgame-wireframe.png)
 
-## Making a plan
+## States
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+1. Pick shell state: waiting for user to pick which shell, instruction header above
+2. Results screen state: reveal pearl, transform shell down, update stats, header
 
-Additional considerations:
+## Events
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+-   _user clicks any shell:_ change header, update scores, transform shell down, reveal pearl
+-   _(stretch goal) try again button:_ change header, reset shell transform, hide pearl
+
+## Functions
+
+-   `displayResults(shellLocation, shellSelected, outcome)`: shows pearl and transforms shell in appropriate location, changes header with win/lose message
+-   `resetGame(pearlLocation)`: reset shell transform, hide pearl, reset game visuals
+-   `updateStats(gameOutcome)`: update internally tracked stats, update stat display on page
+-   `setRandomPearlLocation(shellCount)`: returns random location for pearl
+-   `resetStats()`: resets all tracked stats (win/loss/total) to zero; does not reset game
+
+## Attributions
+
+All images utilized are in the public domain.
