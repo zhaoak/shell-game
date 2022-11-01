@@ -4,7 +4,7 @@ main {
 
 .shellButton {
     background-color: transparent;
-    border: none;
+    border: thick dotted transparent;
     outline: none;
     cursor: pointer;
 }
@@ -33,4 +33,8 @@ main {
 
 .pearlLocation {
     transform: translateY(113px);
+}
+
+.hidden {
+    display: none;
 }
